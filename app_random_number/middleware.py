@@ -16,7 +16,7 @@ class RequestTimingMiddleware:
 
         user = getattr(request, "user", None)
         user_repr = str(user) if getattr(user, "is_authenticated", False) else "anon"
-
+        # test
         # лог + (опционально) заголовок для удобства в браузере/Postman
         response["X-Response-Time"] = f"{duration_ms:.2f} ms"
         logger.info(
