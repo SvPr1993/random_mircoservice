@@ -18,5 +18,6 @@ class TimeCount(APIView):
         response = requests.get("http://127.0.0.1:3333/")
         end_time = time.time()
         response_time_ms = (end_time - start_time) * 1000
-        print(f"Время ответа: {response_time_ms:.2f} мс")
+        json_anwser = {"time": response_time_ms}
+        return Response(json_anwser)
 
